@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="pacman"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pacman">
+				<Option output="/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/pacman" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zaeemasvat_/CLionProjects/pacman/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 pacman"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="pacman/fast">
+				<Option output="/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/pacman" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zaeemasvat_/CLionProjects/pacman/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 pacman/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/BlueGhost.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/BlueGhost.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/GhostPlan.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/GhostPlan.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/GhostScatterPeriod.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/GhostScatterPeriod.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/LoadLevelHelpers.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/RedGhost.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/RedGhost.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/character.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/character.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/ghost.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/ghost.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/helpers.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/helpers.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/main.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/maze2.txt">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/mazeIndex.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/mazeIndex.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/pacman.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/pacman.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/sprites.png">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/texture.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/texture.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/tile.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/tile.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/timer.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/timer.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/window.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/window.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/world.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/world.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/maze2.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/sprites.png">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
