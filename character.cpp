@@ -42,7 +42,6 @@ SDL_Rect Character::getNextPosition()
 	return temp;
 }
 
-
 void Character::assignTilePos (SDL_Rect rec) {
 	
 	x = rec.x;
@@ -75,7 +74,7 @@ Direction Character::getDrection() {
 }
 
 mazeIndex Character::getMazeIndex() {
-	return mazeIndex (((x+10)/20) * 20, ((y+10)/20) * 20);
+	return mazeIndex (((y+10)/20) * 20, ((x+10)/20) * 20);
 }
 
 mazeIndex Character::getFloorMazeIndex() {
@@ -83,7 +82,11 @@ mazeIndex Character::getFloorMazeIndex() {
 }
 
 mazeIndex Character::getMazeIndex(int some_x, int some_y) {
-    return mazeIndex (((some_x+10)/20) * 20, ((some_y+10)/20) * 20);
+    return mazeIndex (((some_y+10)/20) * 20, ((some_x+10)/20) * 20);
+}
+
+mazeIndex Character::getFloorMazeIndex(int some_x, int some_y) {
+    return mazeIndex (some_y/20, some_x/20);
 }
 
 /*

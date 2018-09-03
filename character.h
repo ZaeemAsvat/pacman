@@ -29,7 +29,6 @@ public:
 	virtual void assignTilePos (SDL_Rect rec);
 
 	mazeIndex getMazeIndex ();
-	mazeIndex getMazeIndex(int some_x, int some_y);
 	mazeIndex getFloorMazeIndex ();
 
 	void setSpeed (int new_spd);
@@ -37,6 +36,9 @@ public:
 
 protected:
 	int speed; //pixels per timestep
+
+    mazeIndex getMazeIndex(int some_x, int some_y);
+    mazeIndex getFloorMazeIndex (int some_x, int some_y);
 };
 
 #endif // CHARACTER_H

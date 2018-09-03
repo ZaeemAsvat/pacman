@@ -8,6 +8,7 @@
 #include "tile.h"
 #include "pacman.h"
 #include "ghost.h"
+#include "timer.h"
 
 /** \brief Represents the entire state of the game.
  *
@@ -40,6 +41,8 @@ public:
 
     bool UpdateWorld();                    ///< Advance the world 1 timestep.
 
+    timer ghost_timer, red_inactive_timer, blue_inactive_timer, yellow_inactive_timer, pink_inactive_timer, frightened_timer;
+
 private:
     bool collidedWithWall(SDL_Rect rec);
     void handleEating (SDL_Rect rec);
@@ -47,6 +50,20 @@ private:
     void updateGhosts();
 
     mazeIndex getFloorIndex (int x, int y);
+    mazeIndex getCeilingIndex (int x, int y);
+    mazeIndex getNextMazeIndex (ghost my_ghost, Direction d);
+    SDL_Rect getNextPosition (ghost my_ghost, Direction d);
+
+    bool isWithinBounds (mazeIndex index);
+    Direction getOppositeDirection (Direction d);
+
+    int getRandomNumber (int low, int high);
+
+    SDL_Rect handleChaseMode ();
+    SDL_Rect handleFrightened ();
+    SDL_Rect handleScatterMode ();
+    SDL_Rect handleInactivity();
+    SDL_Rect getNextPosition (mazeIndex target);
 
 };
 

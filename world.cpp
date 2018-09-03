@@ -9,6 +9,8 @@
 #include <stdexcept>
 #include <iostream>
 #include <cmath>
+#include <random>
+#include <chrono>
 
 using namespace std;
 /**
@@ -202,55 +204,243 @@ void World::updateGhosts() {
 
     // only Red Ghost for now
 
+    SDL_Rect next;
+
     if (!Red.isActive()) {
-
-        if (!(Red.getDrection() == Left || Red.getDrection() == Right))
-            Red.setDirection(Left);
-
-        SDL_Rect next = Red.getNextPosition();
-        if (next.x / 20 < ghost::getHome()[Left].col || next.x / 20 > ghost::getHome()[Right].col) {
-            Red.setDirection(Red.getDrection() == Left ? Right : Left);
-            next = Red.getNextPosition();
-        }
-        Red.assignTilePos(next);
-
+        next = handleInactivity();
     } else {
 
         if (Red.hasBeenEaten()) {
 
-            if (Red.getFloorMazeIndex() != ghost::getHome()[Down]) {
-                // ghost is not in its home yet, so we continue trying to get it there
-                Red.setTarget(ghost::getHome()[Down]);
-                Red.bfs(maze);
-                SDL_Rect next = Red.getNextPosition();
-                Red.assignTilePos(next);
-            }
+            // try to get the ghost into its home, handle inactivity once there
+            if (Red.getFloorMazeIndex() != ghost::getHome()[Down])
+                next = getNextPosition(ghost::getHome()[Down]);
+            else
+                next = handleInactivity();
 
-        } else {
+        } else if (Red.isFrightened() || Red.isLosingFright())
+            next = handleFrightened();
 
-            ghost_mode curr_mode = ghost::getMode();
+        else next = ghost::getMode() == Scatter ? handleScatterMode() : handleChaseMode();
+    }
 
-            if (curr_mode == Chase) {
-                Red.bfs(maze);
-                Red.UpdateDirection();
-                SDL_Rect next = Red.getNextPosition();
-                Red.assignTilePos(next);
-            } else if (curr_mode == Scatter) {
-                
-            }
+    Red.assignTilePos(next);
+}
+
+SDL_Rect World::handleChaseMode() {
+
+    SDL_Rect next = getNextPosition(myPacman.getMazeIndex());
+
+    GhostPlan ghostPlan = ghost::getGhostPlan();
+    if (ghostPlan.hasPendingScztterPeriod()) {
+        if (ghost_timer.getTicks() >= ghostPlan.getCurrScatter().getStart()) {
+            ghost::setMode(Scatter);
+            next = handleScatterMode();
         }
     }
+
+    return next;
+}
+
+SDL_Rect World::handleScatterMode() {
+
+    SDL_Rect next;
+
+    GhostPlan ghostPlan = ghost::getGhostPlan();
+    GhostScatterPeriod curr_scatter_period = ghostPlan.getCurrScatter();
+
+    if (ghost_timer.getTicks() >= curr_scatter_period.getStart() + curr_scatter_period.getDuration()) {
+
+        ghost::setMode(Chase);
+        ghostPlan.goToNextScatterPeriod();
+        next = handleChaseMode();
+
+    } else {
+
+        if (Red.getCurrScatterTargetIndex() == -1)
+            Red.setCurrScatterTarget(0);
+
+        if (Red.getMazeIndex() == Red.getCurrScatterTargetIndex())
+            Red.setCurrScatterTarget(Red.getCurrScatterTargetIndex() == 0 ? 1 : 0);
+
+        next = getNextPosition(Red.getCurrScatterTargetIndex());
+    }
+
+    return next;
+}
+
+SDL_Rect World::handleFrightened() {
+
+    SDL_Rect next;
+
+    if (Red.isFrightened()) {
+
+        if (!ghost_timer.isPaused())
+            ghost_timer.pause();
+
+        if (!frightened_timer.isStarted())
+            frightened_timer.start();
+
+        if (frightened_timer.getTicks() >= ghost::getGhostPlan().getFrightenedDuration()) {
+            frightened_timer.stop();
+            Red.setFrightened(false);
+            Red.setLosingFright(true);
+        }
+    }
+
+    if (Red.isLosingFright()) {
+        if (!frightened_timer.isStarted())
+            frightened_timer.start();
+
+        if (frightened_timer.getTicks() >= ghost::getGhostPlan().getFrightenedDuration()) {
+            frightened_timer.stop();
+            ghost_timer.unpause();
+            Red.setLosingFright(false);
+
+            next = ghost::getMode() == Scatter ? handleScatterMode() : handleChaseMode();
+        }
+    }
+
+    if (Red.isFrightened() || Red.isLosingFright()) {
+
+        std::vector<SDL_Rect> possible_next_positions;
+
+        std::array<mazeIndex, 4> possible_indices = {getNextMazeIndex(Red, Up),
+                                                     getNextMazeIndex(Red, Down),
+                                                     getNextMazeIndex(Red, Left),
+                                                     getNextMazeIndex(Red, Right)};
+
+        Direction opposite_dir_to_current = getOppositeDirection(Red.getDrection());
+
+        for (int i = 0; i < possible_indices; ++i) {
+
+            if (isWithinBounds(possible_indices[i])
+                && !maze[possible_indices[i].row][possible_indices[i].col].isOfTileType(Wall)
+                && !maze[possible_indices[i].row][possible_indices[i].col].isOfTileType(GhostHome)
+                && i != opposite_dir_to_current) {
+
+                possible_next_positions.push_back({possible_indices[i].col * 20, possible_indices[i].row * 20, 20, 20});
+            }
+
+        }
+
+        if (possible_next_positions.empty())
+            throw std::runtime_error("can't find random move for Red ghost!");
+
+        next = possible_next_positions[getRandomNumber(0, possible_next_positions.size() - 1);
+
+    }
+
+    return next;
+}
+
+SDL_Rect World::handleInactivity() {
+
+    SDL_Rect next;
+
+    if (!red_inactive_timer.isStarted())
+        red_inactive_timer.start();
+
+    Red.setActive(false);
+
+    Uint32 inactive_duration = Red.hasBeenEaten() ? Red.getGhostPlan().getInactiveOnceBittenDuration() : Red.getGhostPlan().getInitialInactiveDuration();
+
+    if (red_inactive_timer.getTicks() >= inactive_duration) {
+
+        red_inactive_timer.stop();
+        Red.setActive(true);
+        Red.setEaten(false);
+
+        next = ghost::getMode() == Scatter ? handleScatterMode() : handleChaseMode();
+
+    } else {
+
+        if (!(Red.getDrection() == Left || Red.getDrection() == Right))
+            Red.setDirection(Left);
+
+        next = Red.getNextPosition();
+        if (next.x / 20 < ghost::getHome()[Left].col || next.x / 20 > ghost::getHome()[Right].col) {
+            Red.setDirection(Red.getDrection() == Left ? Right : Left);
+            next = Red.getNextPosition();
+        }
+    }
+
+    return next;
+}
+
+SDL_Rect World::getNextPosition(mazeIndex target) {
+    Red.setTarget(target);
+    Red.bfs(maze);
+    Red.UpdateDirection();
+    return Red.getNextPosition();
+}
+
+bool World::isWithinBounds(mazeIndex index) {
+    return index.row >= 0 && index.row < maze.size() && index.col >= 0 && index.col < maze[0].size();
+}
+
+Direction World::getOppositeDirection(Direction d) {
+
+    switch (d) {
+        case Up:
+            return Down;
+        case Down:
+            return Up;
+        case Left:
+            return Right;
+        default:
+            return Left;
+    }
+}
+
+int World::getRandomNumber(int low, int high) {
+    srand(time(0));
+    return rand() % high + low;
 }
 
 mazeIndex World::getFloorIndex(int x, int y) {
     return mazeIndex (std::floor(y/20), std::floor (x/20));
 }
 
+mazeIndex World::getCeilingIndex(int x, int y) {
+    return mazeIndex (std::ceil(y/20), std::ceil(x/20));
+}
+
+mazeIndex World::getNextMazeIndex(ghost my_ghost, Direction d) {
+
+    switch (d) {
+        case Left:
+            return getFloorIndex(my_ghost.x - my_ghost.getSpeed(), my_ghost.y);
+        case Right:
+            return getCeilingIndex(my_ghost.x + my_ghost.getSpeed(), my_ghost.y);
+        case Up:
+            return getFloorIndex(my_ghost.x, my_ghost.y - my_ghost.getSpeed());
+        case Down:
+        default:
+            return getCeilingIndex(my_ghost.x, my_ghost.y + my_ghost.getSpeed());
+    }
+}
+
+SDL_Rect getNextPosition (ghost my_ghost, Direction d) {
+
+    SDL_Rect curr = {my_ghost.x, my_ghost.y, 20, 20};
+
+    if (d == Left)
+        curr.x -= my_ghost.getSpeed();
+    else if (d == Right)
+        curr.x += my_ghost.getSpeed();
+    else if (d == Up)
+        curr.y -= my_ghost.getSpeed();
+    else
+        curr.y += my_ghost.getSpeed();
+
+    return curr;
+}
+
 bool World::collidedWithWall(SDL_Rect rec) {
 
-    if (rec.x < 0 || rec.y < 0 || rec.y > rows*20 || rec.x > cols*20) {
+    if (rec.x < 0 || rec.y < 0 || rec.y > rows*20 || rec.x > cols*20)
         return true;
-    }
 
     for (auto r : maze) {
         for (auto t : r) {

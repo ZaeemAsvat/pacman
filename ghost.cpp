@@ -27,15 +27,31 @@ std::array<mazeIndex, 4> ghost::getHome() {
     return homeIndices;
 }
 
-void ghost::setScatterRec(mazeIndex t_right, mazeIndex t_Left, mazeIndex b_left, mazeIndex b_right) {
-    ScatterRec[TopRight] = t_right;
-    ScatterRec[TopLeft] = t_Left;
-    ScatterRec[BottomLeft]= b_left;
-    ScatterRec[BottomRight] = b_right;
+void ghost::setScatterPoints(mazeIndex index1, mazeIndex index2) {
+    scatterPoints.first = index1;
+    scatterPoints.second = index2;
 }
 
-std::array<mazeIndex, 4> ghost::getScatterRec() {
-    return ScatterRec;
+std::pair<mazeIndex> ghost::getScatterPoints() {
+    return scatterPoints;
+}
+
+mazeIndex ghost::getCurrScatterTarget() {
+    if (index != 0 && index != 1)
+        throw std::invalid_argument ("scatter index out of bounds!");
+
+    return scatterPoints[currScatterTargetIndex];
+}
+
+void ghost::setCurrScatterTarget(int index) {
+    if (index != 0 && index != 1)
+        throw std::invalid_argument ("scatter index out of bounds!");
+
+    currScatterTargetIndex = index;
+}
+
+int ghost::getCurrScatterTargetIndex() {
+    return currScatterTargetIndex;
 }
 
 void ghost::setTarget(mazeIndex target) {
@@ -46,37 +62,24 @@ void ghost::assignTilePos(SDL_Rect rec) {
     x = rec.x;
     y = rec.y;
 
-    if (!isActive())
+    if (!isActive() || ghost::getMode() == Chase || ghost::getMode() == Scatter)
         Character::assignTilePos(rec);
-    else {
-        if (hasBeenEaten()) {
-            eatenUTile.x = x;
-            eatenUTile.y = y;
-            eatenDTile.x = x;
-            eatenDTile.y = y;
-            eatenLTile.x = x;
-            eatenLTile.y = y;
-            eatenRTile.x = x;
-            eatenRTile.y = y;
-        } else {
-            ghost_mode currMode = getMode();
-            switch (currMode) {
-                case Chase:
-                    Character::assignTilePos(rec); break;
-                case Scatter:
-                    Character::assignTilePos(rec); break;
-                case Frightened:
-                    frightenedTile.x = x;
-                    frightenedTile.y = y;
-                    break;
-                case LosingFright:
-                default:
-                    losingFrightTile.x = x;
-                    losingFrightTile.y = y;
-                    break;
-            }
-        }
-    }
+    else if (hasBeenEaten()) {
+        eatenUTile.x = x;
+        eatenUTile.y = y;
+        eatenDTile.x = x;
+        eatenDTile.y = y;
+        eatenLTile.x = x;
+        eatenLTile.y = y;
+        eatenRTile.x = x;
+        eatenRTile.y = y;
+    } else if (isFrightened) {
+        frightenedTile.x = x;
+        frightenedTile.y = y;
+    } else if (isLosingFright) {
+        losingFrightTile.x = x;
+        losingFrightTile.y = y;
+    } else throw std::runtime_error ("couldn't assign ghost tile position! Can't get mode :(");
 }
 
 void ghost::setEaten(bool eaten) {
@@ -89,33 +92,45 @@ bool ghost::hasBeenEaten() {
 
 void ghost::render(Texture *t, int frame) {
 
-    if (!isActive())
+    if (!isActive() || ghost::getMode() == Scatter || ghost::getMode() == Chase)
         Character::render(t, frame);
-    else {
-        if (hasBeenEaten()) {
-            switch (dir) {
-                case Up:
-                    eatenUTile.render(t, frame); break;
-                case Down:
-                    eatenDTile.render(t, frame); break;
-                case Left:
-                    eatenLTile.render(t, frame); break;
-                case Right:
-                default:
-                    eatenRTile.render(t, frame); break;
-            }
-        } else {
-
-            ghost_mode currMode = getMode();
-
-            if (currMode == Chase || currMode == Scatter)
-                Character::render(t, frame);
-            else if (currMode == Frightened)
-                frightenedTile.render(t, frame);
-            else
-                losingFrightTile.render(t, frame);
+    else if (hasBeenEaten()) {
+        switch (dir) {
+            case Up:
+                eatenUTile.render(t, frame);
+                break;
+            case Down:
+                eatenDTile.render(t, frame);
+                break;
+            case Left:
+                eatenLTile.render(t, frame);
+                break;
+            case Right:
+            default:
+                eatenRTile.render(t, frame);
+                break;
         }
-    }
+    } else if (isFrightened)
+        frightenedTile.render(t, frame);
+    else if (isLosingFright)
+        losingFrightTile.render(t, frame);
+    else throw std::runtime_error ("coudn't render ghost! Can't get mode :(");
+}
+
+void ghost::setFrightened(bool frightened) {
+    this.frightened = frightened;
+}
+
+bool ghost::isFrightened() {
+    return frightened;
+}
+
+void ghost::setLosingFright(bool losing_fright) {
+    this->losing_fright = losing_fright;
+}
+
+bool ghost::isLosingFright() {
+    return losing_fright;
 }
 
 void ghost::bfs (std::vector<std::vector<Tile>> maze) {
