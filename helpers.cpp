@@ -55,6 +55,9 @@ Tile makeTile(int x, int y, TileType t, Direction dir)
 	    case Food:
 			return Tile(x, y, {{10,1}},t,1,1); break;
 
+        case PowerFood:
+            return Tile(x, y, {{14,9}, t, 1, 1});
+
 		case Blank:
 			return Tile (x, y, {{1,4}}, t,1,1);	break;
 
@@ -180,21 +183,21 @@ bool collision(SDL_Rect a, SDL_Rect b, int a_off, int b_off)
 
 
     // If A finishs above B - No Collision
-	if (a.y + a.h <= b.y) {
+	if (a.y + a.h <= b.y)
 		return false;
-	}
+
     // If A starts below B - No Collision
-	if (a.y >= b.y + b.h) {
+	if (a.y >= b.y + b.h)
 		return false;
-	} 
+
     // If the right of A is left of B - No Collision
-	if (a.x + a.w <= b.x) {
+	if (a.x + a.w <= b.x)
 		return false;
-	}
+
     // If the left of A is right of B - No Collision
-	if (a.x >= b.x + b.w) {
+	if (a.x >= b.x + b.w)
 		return false;
-	}
+
 //	std::cout << "A coords: " << a.x << ", " << a.y << std::endl;
 	//std::cout << "B coords: " << b.x << ", " << b.y << std::endl;
 

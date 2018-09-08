@@ -23,6 +23,24 @@ void ghost::setsHome(mazeIndex up, mazeIndex down, mazeIndex left, mazeIndex rig
     homeIndices[HomeRightIndex] = right;
 }
 
+void ghost::setHomeIndex(mazeIndex index, ghostHomeIndexDirection direction) {
+    switch (direction) {
+        case HomeUpIndex:
+            homeIndices[HomeUpIndex] = index;
+            break;
+        case HomeDownIndex:
+            homeIndices[HomeDownIndex] = index;
+            break;
+        case HomeLeftIndex:
+            homeIndices[HomeLeftIndex] = index;
+            break;
+        case HomeRightIndex:
+        default:
+            homeIndices[HomeRightIndex] = index;
+            break;
+    }
+}
+
 std::array<mazeIndex, 4> ghost::getHome() {
     return homeIndices;
 }
@@ -51,6 +69,9 @@ void ghost::setCurrScatterTarget(int index) {
 }
 
 int ghost::getCurrScatterTargetIndex() {
+    if (index != 0 && index != 1)
+        throw std::invalid_argument ("scatter index out of bounds!");
+
     return currScatterTargetIndex;
 }
 

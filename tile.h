@@ -11,7 +11,7 @@
 /// Enumeration representing the type of the tile. This is useful
 /// later when we code the game logic.
 enum TileType{Pacman, MrsPacman, GhostR, GhostP, GhostB, GhostY,
-              Wall, GhostHome, Blank, Food, Number, Ready, GameOver,
+              Wall, GhostHome, Blank, Food, PowerFood, Number, Ready, GameOver,
                 FrightenedGhost, EatenGhost, LosingFrightGhost};
 
 enum Direction{Up, Down, Left, Right, NoDirection};

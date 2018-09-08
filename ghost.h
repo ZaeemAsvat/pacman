@@ -13,7 +13,7 @@ enum ghost_mode {Chase, Scatter};
 
 enum ghost_character {red, blue, pink, yellow};
 
-enum ghostHomeIndices {HomeUpIndex, HomeDownIndex, HomeLeftIndex, HomeRightIndex, HomeTotalIndices};
+enum ghostHomeIndexDirection {HomeUpIndex, HomeDownIndex, HomeLeftIndex, HomeRightIndex, HomeTotalIndices};
 
 class ghost : public Character {
 
@@ -33,6 +33,7 @@ public:
     void setActive (bool a);
 
     static void setsHome (mazeIndex up, mazeIndex down, mazeIndex left, mazeIndex right);
+    static void setHomeIndex (mazeIndex index, ghostHomeIndexDirection direction);
 
     static std::array<mazeIndex, 4> getHome();
 
@@ -65,7 +66,6 @@ public:
     Tile eatenDTile;
     Tile eatenLTile;
     Tile eatenRTile;
-
 
 
 protected:

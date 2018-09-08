@@ -43,6 +43,10 @@ public:
 
     timer ghost_timer, red_inactive_timer, blue_inactive_timer, yellow_inactive_timer, pink_inactive_timer, frightened_timer;
 
+    mazeIndex myPacman_original_index;
+
+    void resetCharacterPositions();
+
 private:
     bool collidedWithWall(SDL_Rect rec);
     void handleEating (SDL_Rect rec);
@@ -53,6 +57,7 @@ private:
     mazeIndex getCeilingIndex (int x, int y);
     mazeIndex getNextMazeIndex (ghost my_ghost, Direction d);
     SDL_Rect getNextPosition (ghost my_ghost, Direction d);
+    SDL_Rect getRectangle (Tile tile);
 
     bool isWithinBounds (mazeIndex index);
     Direction getOppositeDirection (Direction d);

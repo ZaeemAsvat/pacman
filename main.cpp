@@ -8,7 +8,16 @@
 #include "helpers.h"
 #include "character.h"
 #include "world.h"
+#include "LoadLevelHelpers.cpp"
 using namespace std;
+
+void displayGameOver (World MyWorld, Texture &MyTextures, int frame) {
+    MyWorld.render(&MyTextures, frame);
+    if (frame % 10 != 0) {
+        Tile game_over = makeTile(MyWorld.cols/2.7*MyTextures.tileWidth(), MyWorld.rows/2.7*MyTextures.tileHeight(), GameOver);
+        game_over.render(&MyTextures, frame);
+    }
+}
 
 int main()
 {
@@ -19,7 +28,11 @@ int main()
     Texture MyTextures;
     MyTextures.loadFile (spriteFilename, 20, 20);
     Tile::tileWidth = 20; Tile::tileHeight = 20;
-    World MyWorld ("maze2.txt", MyTextures.tileWidth(), MyTextures.tileHeight());
+
+    // loading only level one for now
+    World MyWorld = loadLevelOne("maze2.txt", MyTextures.tileWidth(), MyTextures.tileHeight());
+    int num_lives = 3;
+
     int frame = 0;
     bool running = true;
 
@@ -27,9 +40,9 @@ int main()
         SDL_Event e;
         while (SDL_PollEvent (&e)) {
 
-            if (e.type == SDL_QUIT) {
+            if (e.type == SDL_QUIT)
                 running = false;
-            }
+
             MyTextures.handle_event(e, MyWorld.rows, MyWorld.cols);
             MyWorld.myPacman.handle_event(e);
         }
@@ -46,12 +59,18 @@ int main()
             MyWorld.UpdateWorld();
             MyWorld.render(&MyTextures, frame);
         } else {
-            MyWorld.render(&MyTextures, frame);
-            if (frame % 10 != 0) {
-                Tile game_over = makeTile(MyWorld.cols/2.7*MyTextures.tileWidth(), MyWorld.rows/2.7*MyTextures.tileHeight(), GameOver);
-                game_over.render(&MyTextures, frame);
-            }
 
+            MyWorld.ghost_timer.pause();
+
+            if (MyWorld.myPacman.eaten) {
+                --num_lives;
+                if (num_lives <= 0) {
+                    displayGameOver(MyWorld, MyTextures, frame);
+                } else {
+                    MyWorld.resetCharacterPositions();
+                    MyWorld.ghost_timer.unpause();
+                }
+            } else displayGameOver(MyWorld, MyTextures, frame);
 
         }
 

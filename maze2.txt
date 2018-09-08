@@ -1,15 +1,15 @@
 22 19
 xxxxxxxxxxxxxxxxxxx
 x........x........x
-x.xx.xxx.x.xxx.xx.x
+xPxx.xxx.x.xxx.xxPx
 x.xx.xxx.x.xxx.xx.x
 x.................x
 x.xx.x.xxxxx.x.xx.x
 x....x...x...x....x
 xxxx.xxx.x.xxx.xxxx
 xxxx.x...R...x.xxxx
-xxxx.x.xx xx.x.xxxx
-x......xBPOx......x
+xxxx.x.xxUxx.x.xxxx
+x......xLDRx......x
 xxxx.x.xxxxx.x.xxxx
 xxxx.x.......x.xxxx
 xxxx.x.xxxxx.x.xxxx
@@ -18,6 +18,6 @@ x.xx.xxx.x.xxx.xx.x
 x..x.....0.....x..x
 xx.x.x.xxxxx.x.x.xx
 x....x...x...x....x
-x.xxxxxx.x.xxxxxx.x
+xPxxxxxx.x.xxxxxxPx
 x.................x
 xxxxxxxxxxxxxxxxxxx

@@ -15,6 +15,7 @@ public:
 	Direction prevDir = NoDirection;
 	Direction pendingDir = NoDirection;
 	bool movePending = false;
+	bool eaten = false;
 
 };
 
