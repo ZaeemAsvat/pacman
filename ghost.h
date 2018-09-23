@@ -59,6 +59,8 @@ public:
 	void setLosingFright (bool losing_fright);
 	bool isLosingFright();
 
+	void ResetGhostPath (int num_rows, int num_cols);
+
     Tile frightenedTile;
     Tile losingFrightTile;
 

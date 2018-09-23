@@ -111,6 +111,8 @@ World::World(string filename, int tileWidth, int tileHeight)
             else throw std::runtime_error ("maze contains invalid characters");
         }
     }
+
+    Red.ResetGhostPath(rows, cols);
 }
 
 /**
@@ -192,7 +194,7 @@ void World::updatePacman() {
     // if we have a move pending
     if (myPacman.movePending) {
 
-        SDL_Rect pendingPos = myPacman.getNextPosition();
+        SDL_Rect pendingPos = getNextPosition(myPacman, myPacman.pendingDir);
 
         //if pending move is valid
         if (!collidedWithWall(pendingPos)) {
@@ -237,7 +239,6 @@ void World::updatePacman() {
     }
 
     myPacman.prevDir = myPacman.dir;
-
 }
 
 void World::updateGhosts() {
@@ -270,7 +271,6 @@ void World::updateGhosts() {
 SDL_Rect World::handleChaseMode() {
 
     SDL_Rect next = getNextPosition(myPacman.getMazeIndex());
-    cout << "got this far?\n";
 
     GhostPlan ghostPlan = Red.getGhostPlan();
     if (ghostPlan.hasPendingScztterPeriod()) {
@@ -408,10 +408,8 @@ SDL_Rect World::handleInactivity() {
 }
 
 SDL_Rect World::getNextPosition(mazeIndex target) {
-    cout << target.row << " " << target.col << endl;
     Red.setTarget(target);
     Red.bfs(maze);
-    cout << "got this far?\n";
     Red.UpdateDirection();
     return Red.getNextPosition();
 }
@@ -462,18 +460,18 @@ mazeIndex World::getNextMazeIndex(ghost my_ghost, Direction d) {
     }
 }
 
-SDL_Rect World::getNextPosition (ghost my_ghost, Direction d) {
+SDL_Rect World::getNextPosition (Character my_character, Direction d) {
 
-    SDL_Rect curr = {my_ghost.x, my_ghost.y, 20, 20};
+    SDL_Rect curr = {my_character.x, my_character.y, 20, 20};
 
     if (d == Left)
-        curr.x -= my_ghost.getSpeed();
+        curr.x -= my_character.getSpeed();
     else if (d == Right)
-        curr.x += my_ghost.getSpeed();
+        curr.x += my_character.getSpeed();
     else if (d == Up)
-        curr.y -= my_ghost.getSpeed();
+        curr.y -= my_character.getSpeed();
     else
-        curr.y += my_ghost.getSpeed();
+        curr.y += my_character.getSpeed();
 
     return curr;
 }
@@ -487,11 +485,13 @@ bool World::collidedWithWall(SDL_Rect rec) {
     if (rec.x < 0 || rec.y < 0 || rec.y > rows*20 || rec.x > cols*20)
         return true;
 
-    for (auto r : maze)
-        for (auto t : r)
-            if (t.myType == Wall && collision(rec, {t.x, t.y, t.w*20, t.h*20}, 0, 0))
+    for (auto r : maze) {
+        for (auto t : r) {
+            if (t.myType == Wall && collision(rec, {t.x, t.y, t.w * 20, t.h * 20}, 0, 0)) {
                 return true;
-
+            }
+        }
+    }
 
     return false;
 }

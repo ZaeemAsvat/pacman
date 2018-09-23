@@ -15,40 +15,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34b290f9-451f-462c-a785-d9da167e71ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/loadLevelHelpers.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/loadLevelHelpers.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoadLevelHelpers.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/character.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/character.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/BlueGhost.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/BlueGhost.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/RedGhost.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/RedGhost.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/character.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/character.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/flags.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/ghost.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/ghost.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/helpers.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/helpers.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/pacman.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/pacman.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/tile.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/tile.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/world.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/pacman.dir/world.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/pacman" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/pacman" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/pacman.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/pacman.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ghost.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ghost.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ghost.h" beforeDir="false" afterPath="$PROJECT_DIR$/ghost.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/helpers.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maze2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/maze2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/world.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world.h" beforeDir="false" afterPath="$PROJECT_DIR$/world.h" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -124,8 +99,8 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cpp" value="25" />
-          <entry key="h" value="32" />
-          <entry key="pacman (disassembly)" value="1" />
+          <entry key="h" value="33" />
+          <entry key="pacman (disassembly)" value="2" />
           <entry key="png" value="2" />
           <entry key="txt" value="8" />
         </counts>
@@ -133,16 +108,16 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CMakeLists.txt" value="5" />
-          <entry key="Disassembly" value="1" />
+          <entry key="Disassembly" value="2" />
           <entry key="Image" value="2" />
-          <entry key="ObjectiveC" value="57" />
+          <entry key="ObjectiveC" value="58" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cpp" value="9301" />
-          <entry key="h" value="2382" />
+          <entry key="cpp" value="9633" />
+          <entry key="h" value="2462" />
           <entry key="txt" value="130" />
         </counts>
       </usages-collector>
@@ -150,7 +125,7 @@
         <counts>
           <entry key="CMakeLists.txt" value="116" />
           <entry key="Doxygen file" value="2" />
-          <entry key="ObjectiveC" value="11681" />
+          <entry key="ObjectiveC" value="12093" />
           <entry key="PLAIN_TEXT" value="14" />
         </counts>
       </usages-collector>
@@ -158,11 +133,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/world.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="289" column="45" lean-forward="true" selection-start-line="289" selection-start-column="45" selection-end-line="289" selection-end-column="45" />
+            <state relative-caret-position="135">
+              <caret line="196" column="74" lean-forward="true" selection-start-line="196" selection-start-column="74" selection-end-line="196" selection-end-column="74" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -171,10 +146,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/character.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="23" column="15" lean-forward="true" selection-start-line="20" selection-end-line="23" selection-end-column="15" />
+              <folding>
+                <element signature="e#41#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/character.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="84" column="59" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
+            <state relative-caret-position="45">
+              <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -183,7 +170,7 @@
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="33">
-              <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+              <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -194,8 +181,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/world.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="183">
+              <caret line="58" column="62" selection-start-line="58" selection-start-column="62" selection-end-line="58" selection-end-column="62" />
               <folding>
                 <element signature="e#91#108#0" expanded="true" />
               </folding>
@@ -215,8 +202,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ghost.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+            <state relative-caret-position="165">
+              <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
             </state>
           </provider>
         </entry>
@@ -224,17 +211,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/helpers.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="169" column="13" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="13" />
+            <state relative-caret-position="15">
+              <caret line="34" column="3" lean-forward="true" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ghost.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="128" column="15" lean-forward="true" selection-start-line="128" selection-start-column="15" selection-end-line="128" selection-end-column="15" />
+            <state relative-caret-position="105">
+              <caret line="269" selection-start-line="269" selection-end-line="269" />
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
@@ -262,19 +249,19 @@
         <option value="$PROJECT_DIR$/GhostPlan.cpp" />
         <option value="$PROJECT_DIR$/tile.h" />
         <option value="$PROJECT_DIR$/pacman.h" />
-        <option value="$PROJECT_DIR$/world.h" />
-        <option value="$PROJECT_DIR$/helpers.cpp" />
         <option value="$PROJECT_DIR$/LoadLevelHelpers.cpp" />
         <option value="$PROJECT_DIR$/loadLevelHelpers.cpp" />
         <option value="$PROJECT_DIR$/loadLevelHelpers.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/maze2.txt" />
         <option value="$PROJECT_DIR$/character.h" />
-        <option value="$PROJECT_DIR$/ghost.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/world.cpp" />
         <option value="$PROJECT_DIR$/character.cpp" />
+        <option value="$PROJECT_DIR$/ghost.h" />
         <option value="$PROJECT_DIR$/ghost.cpp" />
+        <option value="$PROJECT_DIR$/helpers.cpp" />
+        <option value="$PROJECT_DIR$/world.h" />
+        <option value="$PROJECT_DIR$/world.cpp" />
       </list>
     </option>
   </component>
@@ -421,12 +408,12 @@
       <workItem from="1536359133200" duration="6422000" />
       <workItem from="1537447168941" duration="407000" />
       <workItem from="1537447818526" duration="6435000" />
-      <workItem from="1537629818023" duration="5933000" />
+      <workItem from="1537629818023" duration="11823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146688000" />
+    <option name="totallyTimeSpent" value="152578000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -437,17 +424,17 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49880287" weight="0.32952693" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48044693" visible="true" weight="0.1761827" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.85235435" weight="0.39967373" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4349561" visible="true" weight="0.1761827" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8507582" weight="0.16639479" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.51955307" side_tool="true" visible="true" weight="0.1761827" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.56504387" side_tool="true" visible="true" weight="0.1761827" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="CMake" order="11" sideWeight="0.49880287" weight="0.045677" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.8316041" weight="0.30668843" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.7861133" weight="0.30668843" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -487,12 +474,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/ghost.cpp</url>
-          <line>30</line>
+          <line>28</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/ghost.cpp</url>
-          <line>157</line>
+          <line>159</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
@@ -639,27 +626,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#91#108#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tile.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/helpers.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="169" column="13" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -670,56 +640,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/character.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-          <folding>
-            <element signature="e#41#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
-          <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/world.cpp">
+    <entry file="file://$PROJECT_DIR$/ghost.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="289" column="45" lean-forward="true" selection-start-line="289" selection-start-column="45" selection-end-line="289" selection-end-column="45" />
+        <state relative-caret-position="165">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ghost.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="269" selection-start-line="269" selection-end-line="269" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/character.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="84" column="59" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
+        <state relative-caret-position="45">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ghost.h">
+    <entry file="file://$PROJECT_DIR$/helpers.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="15">
+          <caret line="34" column="3" lean-forward="true" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ghost.cpp">
+    <entry file="file://$PROJECT_DIR$/character.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="128" column="15" lean-forward="true" selection-start-line="128" selection-start-column="15" selection-end-line="128" selection-end-column="15" />
+        <state relative-caret-position="108">
+          <caret line="23" column="15" lean-forward="true" selection-start-line="20" selection-end-line="23" selection-end-column="15" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#41#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="58" column="62" selection-start-line="58" selection-start-column="62" selection-end-line="58" selection-end-column="62" />
+          <folding>
+            <element signature="e#91#108#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/world.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="196" column="74" lean-forward="true" selection-start-line="196" selection-start-column="74" selection-end-line="196" selection-end-column="74" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

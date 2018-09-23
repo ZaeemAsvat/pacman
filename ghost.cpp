@@ -22,8 +22,6 @@ ghost::ghost(int myX, int myY, TileType t, int spd) {
     x = myX; y = myY;
     speed = spd;
     mode = Chase;
-
-    ghostPath ()
 }
 
 ghost::ghost() {}
@@ -116,6 +114,10 @@ void ghost::setEaten(bool e) {
 
 bool ghost::hasBeenEaten() {
     return eaten;
+}
+
+void ghost::ResetGhostPath(int num_rows, int num_cols) {
+    ghostPath = std::vector<std::vector<bool>> (num_rows, std::vector<bool> (num_cols, false));
 }
 
 void ghost::render(Texture *t, int frame) {
@@ -222,7 +224,8 @@ void ghost::bfs (std::vector<std::vector<Tile>> maze) {
         }
     }
 
-    ghostPath = {{false}};
+    ResetGhostPath(maze.size(), maze[0].size());
+
     if (!q.empty() || Goalfound) {
         mazeIndex curr = parent[TargetIndex.row][TargetIndex.col];
         while (curr != start) {

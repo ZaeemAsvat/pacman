@@ -56,7 +56,7 @@ private:
     mazeIndex getFloorIndex (int x, int y);
     mazeIndex getCeilingIndex (int x, int y);
     mazeIndex getNextMazeIndex (ghost my_ghost, Direction d);
-    SDL_Rect getNextPosition (ghost my_ghost, Direction d);
+    SDL_Rect getNextPosition (Character my_character, Direction d);
     SDL_Rect getRectangle (Tile tile);
 
     bool isWithinBounds (mazeIndex index);
