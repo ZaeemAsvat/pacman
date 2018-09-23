@@ -11,8 +11,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.12.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.12.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.12.1/CMakeSystem.cmake"
-  "../maze2.txt"
-  "../sprites.png"
   "/home/zaeemasvat_/Downloads/clion-2018.2.3/bin/cmake/linux/share/cmake-3.12/Modules/CMakeCInformation.cmake"
   "/home/zaeemasvat_/Downloads/clion-2018.2.3/bin/cmake/linux/share/cmake-3.12/Modules/CMakeCXXInformation.cmake"
   "/home/zaeemasvat_/Downloads/clion-2018.2.3/bin/cmake/linux/share/cmake-3.12/Modules/CMakeCommonLanguageInclude.cmake"
@@ -43,8 +41,6 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "sprites.png"
-  "maze2.txt"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

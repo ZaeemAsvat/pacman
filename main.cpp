@@ -8,7 +8,8 @@
 #include "helpers.h"
 #include "character.h"
 #include "world.h"
-#include "LoadLevelHelpers.cpp"
+#include "loadLevelHelpers.h"
+
 using namespace std;
 
 void displayGameOver (World MyWorld, Texture &MyTextures, int frame) {
@@ -29,12 +30,17 @@ int main()
     MyTextures.loadFile (spriteFilename, 20, 20);
     Tile::tileWidth = 20; Tile::tileHeight = 20;
 
+    loadLevelHelpers levelHelpers;
+
     // loading only level one for now
-    World MyWorld = loadLevelOne("maze2.txt", MyTextures.tileWidth(), MyTextures.tileHeight());
+    World MyWorld = levelHelpers.loadLevelOne("maze2.txt", MyTextures.tileWidth(), MyTextures.tileHeight());
     int num_lives = 3;
+    bool pacman_is_out_of_lives = false;
 
     int frame = 0;
     bool running = true;
+
+    MyWorld.ghost_timer.start();
 
     while(running){
         SDL_Event e;
@@ -54,23 +60,28 @@ int main()
         //clear the screen
         SDL_RenderClear (MyTextures.myWin.sdlRenderer);
 
-
         if (MyWorld.ready) {
             MyWorld.UpdateWorld();
             MyWorld.render(&MyTextures, frame);
         } else {
 
-            MyWorld.ghost_timer.pause();
+            if (pacman_is_out_of_lives)
+                displayGameOver(MyWorld, MyTextures, frame);
+            else {
 
-            if (MyWorld.myPacman.eaten) {
-                --num_lives;
-                if (num_lives <= 0) {
-                    displayGameOver(MyWorld, MyTextures, frame);
-                } else {
-                    MyWorld.resetCharacterPositions();
-                    MyWorld.ghost_timer.unpause();
+                MyWorld.ghost_timer.pause();
+
+                if (MyWorld.myPacman.eaten) {
+                    --num_lives;
+                    if (num_lives <= 0) {
+                        pacman_is_out_of_lives = true;
+                        displayGameOver(MyWorld, MyTextures, frame);
+                    } else {
+                        MyWorld.resetCharacterPositions();
+                        MyWorld.ghost_timer.unpause();
+                    }
                 }
-            } else displayGameOver(MyWorld, MyTextures, frame);
+            }
 
         }
 

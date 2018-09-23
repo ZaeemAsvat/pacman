@@ -16,6 +16,16 @@ GhostScatterPeriod.h
 SDL2/SDL_quit.h
 -
 
+/home/zaeemasvat_/CLionProjects/pacman/character.cpp
+cmath
+-
+tile.h
+/home/zaeemasvat_/CLionProjects/pacman/tile.h
+helpers.h
+/home/zaeemasvat_/CLionProjects/pacman/helpers.h
+character.h
+/home/zaeemasvat_/CLionProjects/pacman/character.h
+
 /home/zaeemasvat_/CLionProjects/pacman/character.h
 tile.h
 /home/zaeemasvat_/CLionProjects/pacman/tile.h

@@ -21,19 +21,6 @@ CMakeFiles/pacman.dir/GhostPlan.cpp.o
 CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.o
  /home/zaeemasvat_/CLionProjects/pacman/GhostScatterPeriod.cpp
  /home/zaeemasvat_/CLionProjects/pacman/GhostScatterPeriod.h
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o
- /home/zaeemasvat_/CLionProjects/pacman/GhostPlan.h
- /home/zaeemasvat_/CLionProjects/pacman/GhostScatterPeriod.h
- /home/zaeemasvat_/CLionProjects/pacman/LoadLevelHelpers.cpp
- /home/zaeemasvat_/CLionProjects/pacman/character.h
- /home/zaeemasvat_/CLionProjects/pacman/ghost.h
- /home/zaeemasvat_/CLionProjects/pacman/helpers.h
- /home/zaeemasvat_/CLionProjects/pacman/mazeIndex.h
- /home/zaeemasvat_/CLionProjects/pacman/pacman.h
- /home/zaeemasvat_/CLionProjects/pacman/texture.h
- /home/zaeemasvat_/CLionProjects/pacman/tile.h
- /home/zaeemasvat_/CLionProjects/pacman/window.h
- /home/zaeemasvat_/CLionProjects/pacman/world.h
 CMakeFiles/pacman.dir/RedGhost.cpp.o
  /home/zaeemasvat_/CLionProjects/pacman/GhostPlan.h
  /home/zaeemasvat_/CLionProjects/pacman/GhostScatterPeriod.h
@@ -79,17 +66,34 @@ CMakeFiles/pacman.dir/helpers.cpp.o
  /home/zaeemasvat_/CLionProjects/pacman/texture.h
  /home/zaeemasvat_/CLionProjects/pacman/tile.h
  /home/zaeemasvat_/CLionProjects/pacman/window.h
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o
+ /home/zaeemasvat_/CLionProjects/pacman/GhostPlan.h
+ /home/zaeemasvat_/CLionProjects/pacman/GhostScatterPeriod.h
+ /home/zaeemasvat_/CLionProjects/pacman/character.h
+ /home/zaeemasvat_/CLionProjects/pacman/ghost.h
+ /home/zaeemasvat_/CLionProjects/pacman/helpers.h
+ /home/zaeemasvat_/CLionProjects/pacman/loadLevelHelpers.cpp
+ /home/zaeemasvat_/CLionProjects/pacman/loadLevelHelpers.h
+ /home/zaeemasvat_/CLionProjects/pacman/mazeIndex.h
+ /home/zaeemasvat_/CLionProjects/pacman/pacman.h
+ /home/zaeemasvat_/CLionProjects/pacman/texture.h
+ /home/zaeemasvat_/CLionProjects/pacman/tile.h
+ /home/zaeemasvat_/CLionProjects/pacman/timer.h
+ /home/zaeemasvat_/CLionProjects/pacman/window.h
+ /home/zaeemasvat_/CLionProjects/pacman/world.h
 CMakeFiles/pacman.dir/main.cpp.o
  /home/zaeemasvat_/CLionProjects/pacman/GhostPlan.h
  /home/zaeemasvat_/CLionProjects/pacman/GhostScatterPeriod.h
  /home/zaeemasvat_/CLionProjects/pacman/character.h
  /home/zaeemasvat_/CLionProjects/pacman/ghost.h
  /home/zaeemasvat_/CLionProjects/pacman/helpers.h
+ /home/zaeemasvat_/CLionProjects/pacman/loadLevelHelpers.h
  /home/zaeemasvat_/CLionProjects/pacman/main.cpp
  /home/zaeemasvat_/CLionProjects/pacman/mazeIndex.h
  /home/zaeemasvat_/CLionProjects/pacman/pacman.h
  /home/zaeemasvat_/CLionProjects/pacman/texture.h
  /home/zaeemasvat_/CLionProjects/pacman/tile.h
+ /home/zaeemasvat_/CLionProjects/pacman/timer.h
  /home/zaeemasvat_/CLionProjects/pacman/window.h
  /home/zaeemasvat_/CLionProjects/pacman/world.h
 CMakeFiles/pacman.dir/mazeIndex.cpp.o
@@ -132,6 +136,7 @@ CMakeFiles/pacman.dir/world.cpp.o
  /home/zaeemasvat_/CLionProjects/pacman/pacman.h
  /home/zaeemasvat_/CLionProjects/pacman/texture.h
  /home/zaeemasvat_/CLionProjects/pacman/tile.h
+ /home/zaeemasvat_/CLionProjects/pacman/timer.h
  /home/zaeemasvat_/CLionProjects/pacman/window.h
  /home/zaeemasvat_/CLionProjects/pacman/world.cpp
  /home/zaeemasvat_/CLionProjects/pacman/world.h

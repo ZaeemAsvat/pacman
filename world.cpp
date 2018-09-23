@@ -23,7 +23,7 @@ using namespace std;
  * @param tileHeight - Height of each tile
  */
 World::World(string filename, int tileWidth, int tileHeight)
-        : food(0), points(0), ready(true), myPacman(0,0, 5), Red(0,0, GhostR, 5), Blue(0,0, GhostB, 5)
+        : food(0), points(0), ready(true), myPacman(0,0, 5), Red(0,0, GhostR, 5)
 {
     ifstream f(filename);
     if(!f.is_open()) {
@@ -141,7 +141,7 @@ void World::resetCharacterPositions() {
     myPacman.assignTilePos(pacman_original_pos);
 
     std::array<mazeIndex, 4> g_home = ghost::getHome();
-    SDL_Rect Red_original_pos = {g_home[HomeUpIndex].col * 20, (g_home[HomeUpIndex]-1)*20, 20, 20};
+    SDL_Rect Red_original_pos = {g_home[HomeUpIndex].col * 20, (g_home[HomeUpIndex].row-1) * 20, 20, 20};
 
     Red.setActive(true);
     Red.setFrightened(false);
@@ -270,6 +270,7 @@ void World::updateGhosts() {
 SDL_Rect World::handleChaseMode() {
 
     SDL_Rect next = getNextPosition(myPacman.getMazeIndex());
+    cout << "got this far?\n";
 
     GhostPlan ghostPlan = Red.getGhostPlan();
     if (ghostPlan.hasPendingScztterPeriod()) {
@@ -300,10 +301,10 @@ SDL_Rect World::handleScatterMode() {
         if (Red.getCurrScatterTargetIndex() == -1)
             Red.setCurrScatterTarget(0);
 
-        if (Red.getMazeIndex() == Red.getCurrScatterTargetIndex())
+        if (Red.getMazeIndex() == Red.getCurrScatterTarget())
             Red.setCurrScatterTarget(Red.getCurrScatterTargetIndex() == 0 ? 1 : 0);
 
-        next = getNextPosition(Red.getCurrScatterTargetIndex());
+        next = getNextPosition(Red.getCurrScatterTarget());
     }
 
     return next;
@@ -365,7 +366,7 @@ SDL_Rect World::handleFrightened() {
         if (possible_next_positions.empty())
             throw std::runtime_error("can't find random move for Red ghost!");
 
-        next = possible_next_positions[getRandomNumber(0, possible_next_positions.size() - 1);
+        next = possible_next_positions[getRandomNumber(0, possible_next_positions.size() - 1)];
 
     } else next = ghost::getMode() == Scatter ? handleScatterMode() : handleChaseMode();
 
@@ -407,8 +408,10 @@ SDL_Rect World::handleInactivity() {
 }
 
 SDL_Rect World::getNextPosition(mazeIndex target) {
+    cout << target.row << " " << target.col << endl;
     Red.setTarget(target);
     Red.bfs(maze);
+    cout << "got this far?\n";
     Red.UpdateDirection();
     return Red.getNextPosition();
 }

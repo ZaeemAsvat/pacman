@@ -21,19 +21,6 @@ CMakeFiles/pacman.dir/GhostPlan.cpp.o: ../GhostScatterPeriod.h
 CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.o: ../GhostScatterPeriod.cpp
 CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.o: ../GhostScatterPeriod.h
 
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: ../GhostPlan.h
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: ../GhostScatterPeriod.h
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: ../LoadLevelHelpers.cpp
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: ../character.h
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: ../ghost.h
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: ../helpers.h
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: ../mazeIndex.h
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: ../pacman.h
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: ../texture.h
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: ../tile.h
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: ../window.h
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: ../world.h
-
 CMakeFiles/pacman.dir/RedGhost.cpp.o: ../GhostPlan.h
 CMakeFiles/pacman.dir/RedGhost.cpp.o: ../GhostScatterPeriod.h
 CMakeFiles/pacman.dir/RedGhost.cpp.o: ../RedGhost.cpp
@@ -79,16 +66,33 @@ CMakeFiles/pacman.dir/helpers.cpp.o: ../texture.h
 CMakeFiles/pacman.dir/helpers.cpp.o: ../tile.h
 CMakeFiles/pacman.dir/helpers.cpp.o: ../window.h
 
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../GhostPlan.h
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../GhostScatterPeriod.h
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../character.h
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../ghost.h
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../helpers.h
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../loadLevelHelpers.cpp
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../loadLevelHelpers.h
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../mazeIndex.h
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../pacman.h
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../texture.h
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../tile.h
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../timer.h
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../window.h
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../world.h
+
 CMakeFiles/pacman.dir/main.cpp.o: ../GhostPlan.h
 CMakeFiles/pacman.dir/main.cpp.o: ../GhostScatterPeriod.h
 CMakeFiles/pacman.dir/main.cpp.o: ../character.h
 CMakeFiles/pacman.dir/main.cpp.o: ../ghost.h
 CMakeFiles/pacman.dir/main.cpp.o: ../helpers.h
+CMakeFiles/pacman.dir/main.cpp.o: ../loadLevelHelpers.h
 CMakeFiles/pacman.dir/main.cpp.o: ../main.cpp
 CMakeFiles/pacman.dir/main.cpp.o: ../mazeIndex.h
 CMakeFiles/pacman.dir/main.cpp.o: ../pacman.h
 CMakeFiles/pacman.dir/main.cpp.o: ../texture.h
 CMakeFiles/pacman.dir/main.cpp.o: ../tile.h
+CMakeFiles/pacman.dir/main.cpp.o: ../timer.h
 CMakeFiles/pacman.dir/main.cpp.o: ../window.h
 CMakeFiles/pacman.dir/main.cpp.o: ../world.h
 
@@ -131,6 +135,7 @@ CMakeFiles/pacman.dir/world.cpp.o: ../mazeIndex.h
 CMakeFiles/pacman.dir/world.cpp.o: ../pacman.h
 CMakeFiles/pacman.dir/world.cpp.o: ../texture.h
 CMakeFiles/pacman.dir/world.cpp.o: ../tile.h
+CMakeFiles/pacman.dir/world.cpp.o: ../timer.h
 CMakeFiles/pacman.dir/world.cpp.o: ../window.h
 CMakeFiles/pacman.dir/world.cpp.o: ../world.cpp
 CMakeFiles/pacman.dir/world.cpp.o: ../world.h

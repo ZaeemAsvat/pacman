@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 
 project(pacman)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -lSDL2 -lSDL_image")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -lSDL2 -lSDL2_image")
 set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++")
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
@@ -21,13 +21,9 @@ set(SOURCE_FILES main.cpp window.h window.cpp
         timer.h timer.cpp BlueGhost.cpp BlueGhost.h
         RedGhost.cpp RedGhost.h
         mazeIndex.h mazeIndex.cpp
-        LoadLevelHelpers.cpp
         GhostPlan.h GhostPlan.cpp
-        GhostScatterPeriod.h GhostScatterPeriod.cpp)
+        GhostScatterPeriod.h GhostScatterPeriod.cpp loadLevelHelpers.cpp loadLevelHelpers.h)
 
-
-configure_file(sprites.png sprites.png COPYONLY)
-configure_file(maze2.txt maze2.txt COPYONLY)
 
 add_executable(pacman ${SOURCE_FILES})
-target_link_libraries(pacman SDL2main SDL2 SDL_image)
+target_link_libraries(pacman SDL2main SDL2 SDL2_image)

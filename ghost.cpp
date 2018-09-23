@@ -10,8 +10,20 @@ ghost::ghost(int myX, int myY, TileType t, int spd) {
     dTile = makeTile(myX, myY, t, Down);
     lTile = makeTile(myX, myY, t, Left);
     rTile = makeTile(myX, myY, t, Right);
+
+    eatenUTile = makeTile(myX, myY, EatenGhost, Up);
+    eatenDTile = makeTile(myX, myY, EatenGhost, Down);
+    eatenLTile = makeTile(myX, myY, EatenGhost, Left);
+    eatenRTile = makeTile(myX, myY, EatenGhost, Right);
+
+    frightenedTile = makeTile(myX, myY, FrightenedGhost);
+    losingFrightTile = makeTile(myX, myY, LosingFrightGhost);
+
     x = myX; y = myY;
     speed = spd;
+    mode = Chase;
+
+    ghostPath ()
 }
 
 ghost::ghost() {}
@@ -50,26 +62,26 @@ void ghost::setScatterPoints(mazeIndex index1, mazeIndex index2) {
     scatterPoints.second = index2;
 }
 
-std::pair<mazeIndex> ghost::getScatterPoints() {
+std::pair<mazeIndex, mazeIndex> ghost::getScatterPoints() {
     return scatterPoints;
 }
 
 mazeIndex ghost::getCurrScatterTarget() {
-    if (index != 0 && index != 1)
+    if (currScatterTargetIndex != 0 && currScatterTargetIndex != 1)
         throw std::invalid_argument ("scatter index out of bounds!");
 
-    return scatterPoints[currScatterTargetIndex];
+    return currScatterTargetIndex == 0 ? scatterPoints.first : scatterPoints.second;
 }
 
 void ghost::setCurrScatterTarget(int index) {
-    if (index != 0 && index != 1)
+    if (currScatterTargetIndex != 0 && currScatterTargetIndex != 1)
         throw std::invalid_argument ("scatter index out of bounds!");
 
     currScatterTargetIndex = index;
 }
 
 int ghost::getCurrScatterTargetIndex() {
-    if (index != 0 && index != 1)
+    if (currScatterTargetIndex != 0 && currScatterTargetIndex != 1)
         throw std::invalid_argument ("scatter index out of bounds!");
 
     return currScatterTargetIndex;
@@ -80,31 +92,26 @@ void ghost::setTarget(mazeIndex target) {
 }
 
 void ghost::assignTilePos(SDL_Rect rec) {
-    x = rec.x;
-    y = rec.y;
+    Character::assignTilePos(rec);
 
-    if (!isActive() || ghost::getMode() == Chase || ghost::getMode() == Scatter)
-        Character::assignTilePos(rec);
-    else if (hasBeenEaten()) {
-        eatenUTile.x = x;
-        eatenUTile.y = y;
-        eatenDTile.x = x;
-        eatenDTile.y = y;
-        eatenLTile.x = x;
-        eatenLTile.y = y;
-        eatenRTile.x = x;
-        eatenRTile.y = y;
-    } else if (isFrightened) {
-        frightenedTile.x = x;
-        frightenedTile.y = y;
-    } else if (isLosingFright) {
-        losingFrightTile.x = x;
-        losingFrightTile.y = y;
-    } else throw std::runtime_error ("couldn't assign ghost tile position! Can't get mode :(");
+    eatenUTile.x = x;
+    eatenUTile.y = y;
+    eatenDTile.x = x;
+    eatenDTile.y = y;
+    eatenLTile.x = x;
+    eatenLTile.y = y;
+    eatenRTile.x = x;
+    eatenRTile.y = y;
+
+    frightenedTile.x = x;
+    frightenedTile.y = y;
+
+    losingFrightTile.x = x;
+    losingFrightTile.y = y;
 }
 
-void ghost::setEaten(bool eaten) {
-    eaten = true;
+void ghost::setEaten(bool e) {
+    eaten = e;
 }
 
 bool ghost::hasBeenEaten() {
@@ -131,15 +138,15 @@ void ghost::render(Texture *t, int frame) {
                 eatenRTile.render(t, frame);
                 break;
         }
-    } else if (isFrightened)
+    } else if (isFrightened())
         frightenedTile.render(t, frame);
-    else if (isLosingFright)
+    else if (isLosingFright())
         losingFrightTile.render(t, frame);
     else throw std::runtime_error ("coudn't render ghost! Can't get mode :(");
 }
 
 void ghost::setFrightened(bool frightened) {
-    this.frightened = frightened;
+    this->frightened = frightened;
 }
 
 bool ghost::isFrightened() {

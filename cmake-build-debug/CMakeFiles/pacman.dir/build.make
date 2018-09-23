@@ -226,22 +226,9 @@ CMakeFiles/pacman.dir/mazeIndex.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pacman.dir/mazeIndex.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zaeemasvat_/CLionProjects/pacman/mazeIndex.cpp -o CMakeFiles/pacman.dir/mazeIndex.cpp.s
 
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: CMakeFiles/pacman.dir/flags.make
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o: ../LoadLevelHelpers.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o -c /home/zaeemasvat_/CLionProjects/pacman/LoadLevelHelpers.cpp
-
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zaeemasvat_/CLionProjects/pacman/LoadLevelHelpers.cpp > CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.i
-
-CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zaeemasvat_/CLionProjects/pacman/LoadLevelHelpers.cpp -o CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.s
-
 CMakeFiles/pacman.dir/GhostPlan.cpp.o: CMakeFiles/pacman.dir/flags.make
 CMakeFiles/pacman.dir/GhostPlan.cpp.o: ../GhostPlan.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/pacman.dir/GhostPlan.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/pacman.dir/GhostPlan.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pacman.dir/GhostPlan.cpp.o -c /home/zaeemasvat_/CLionProjects/pacman/GhostPlan.cpp
 
 CMakeFiles/pacman.dir/GhostPlan.cpp.i: cmake_force
@@ -254,7 +241,7 @@ CMakeFiles/pacman.dir/GhostPlan.cpp.s: cmake_force
 
 CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.o: CMakeFiles/pacman.dir/flags.make
 CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.o: ../GhostScatterPeriod.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.o -c /home/zaeemasvat_/CLionProjects/pacman/GhostScatterPeriod.cpp
 
 CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.i: cmake_force
@@ -264,6 +251,19 @@ CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.i: cmake_force
 CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zaeemasvat_/CLionProjects/pacman/GhostScatterPeriod.cpp -o CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.s
+
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: CMakeFiles/pacman.dir/flags.make
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o: ../loadLevelHelpers.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o -c /home/zaeemasvat_/CLionProjects/pacman/loadLevelHelpers.cpp
+
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pacman.dir/loadLevelHelpers.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zaeemasvat_/CLionProjects/pacman/loadLevelHelpers.cpp > CMakeFiles/pacman.dir/loadLevelHelpers.cpp.i
+
+CMakeFiles/pacman.dir/loadLevelHelpers.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pacman.dir/loadLevelHelpers.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zaeemasvat_/CLionProjects/pacman/loadLevelHelpers.cpp -o CMakeFiles/pacman.dir/loadLevelHelpers.cpp.s
 
 # Object files for target pacman
 pacman_OBJECTS = \
@@ -280,9 +280,9 @@ pacman_OBJECTS = \
 "CMakeFiles/pacman.dir/BlueGhost.cpp.o" \
 "CMakeFiles/pacman.dir/RedGhost.cpp.o" \
 "CMakeFiles/pacman.dir/mazeIndex.cpp.o" \
-"CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o" \
 "CMakeFiles/pacman.dir/GhostPlan.cpp.o" \
-"CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.o"
+"CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.o" \
+"CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o"
 
 # External object files for target pacman
 pacman_EXTERNAL_OBJECTS =
@@ -300,9 +300,9 @@ pacman: CMakeFiles/pacman.dir/timer.cpp.o
 pacman: CMakeFiles/pacman.dir/BlueGhost.cpp.o
 pacman: CMakeFiles/pacman.dir/RedGhost.cpp.o
 pacman: CMakeFiles/pacman.dir/mazeIndex.cpp.o
-pacman: CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o
 pacman: CMakeFiles/pacman.dir/GhostPlan.cpp.o
 pacman: CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.o
+pacman: CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o
 pacman: CMakeFiles/pacman.dir/build.make
 pacman: CMakeFiles/pacman.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zaeemasvat_/CLionProjects/pacman/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable pacman"

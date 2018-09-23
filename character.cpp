@@ -74,7 +74,7 @@ Direction Character::getDrection() {
 }
 
 mazeIndex Character::getMazeIndex() {
-	return mazeIndex (((y+10)/20) * 20, ((x+10)/20) * 20);
+	return mazeIndex ((((y+10)/20) * 20)/20, (((x+10)/20) * 20)/20);
 }
 
 mazeIndex Character::getFloorMazeIndex() {
@@ -82,7 +82,7 @@ mazeIndex Character::getFloorMazeIndex() {
 }
 
 mazeIndex Character::getMazeIndex(int some_x, int some_y) {
-    return mazeIndex (((some_y+10)/20) * 20, ((some_x+10)/20) * 20);
+    return mazeIndex ((((some_y+10)/20) * 20)/20, (((some_x+10)/20) * 20)/20);
 }
 
 mazeIndex Character::getFloorMazeIndex(int some_x, int some_y) {

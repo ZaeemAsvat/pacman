@@ -104,9 +104,6 @@
 		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/GhostScatterPeriod.h">
 			<Option target="pacman"/>
 		</Unit>
-		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/LoadLevelHelpers.cpp">
-			<Option target="pacman"/>
-		</Unit>
 		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/RedGhost.cpp">
 			<Option target="pacman"/>
 		</Unit>
@@ -129,6 +126,12 @@
 			<Option target="pacman"/>
 		</Unit>
 		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/helpers.h">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/loadLevelHelpers.cpp">
+			<Option target="pacman"/>
+		</Unit>
+		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/loadLevelHelpers.h">
 			<Option target="pacman"/>
 		</Unit>
 		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/main.cpp">
@@ -183,12 +186,6 @@
 			<Option target="pacman"/>
 		</Unit>
 		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\"/>
-		</Unit>
-		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/maze2.txt">
-			<Option virtualFolder="CMake Files\"/>
-		</Unit>
-		<Unit filename="/home/zaeemasvat_/CLionProjects/pacman/sprites.png">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

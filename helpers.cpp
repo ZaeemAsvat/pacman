@@ -56,7 +56,7 @@ Tile makeTile(int x, int y, TileType t, Direction dir)
 			return Tile(x, y, {{10,1}},t,1,1); break;
 
         case PowerFood:
-            return Tile(x, y, {{14,9}, t, 1, 1});
+            return Tile(x, y, {{14,9}}, t, 1, 1);
 
 		case Blank:
 			return Tile (x, y, {{1,4}}, t,1,1);	break;

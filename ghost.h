@@ -46,7 +46,7 @@ public:
 	GhostPlan getGhostPlan ();
 
 	void setScatterPoints (mazeIndex index1, mazeIndex index2);
-	std::pair<mazeIndex> getScatterPoints();
+	std::pair<mazeIndex, mazeIndex> getScatterPoints();
 	mazeIndex getCurrScatterTarget();
 	void setCurrScatterTarget (int index);
 	int getCurrScatterTargetIndex();
@@ -88,7 +88,7 @@ protected:
 
     mazeIndex TargetIndex;
 
-    std::pair<mazeIndex> scatterPoints;
+    std::pair<mazeIndex, mazeIndex> scatterPoints;
     int currScatterTargetIndex = -1;
 
     GhostPlan plan;

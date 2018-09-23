@@ -204,33 +204,6 @@ GhostScatterPeriod.cpp.s:
 	$(MAKE) -f CMakeFiles/pacman.dir/build.make CMakeFiles/pacman.dir/GhostScatterPeriod.cpp.s
 .PHONY : GhostScatterPeriod.cpp.s
 
-LoadLevelHelpers.o: LoadLevelHelpers.cpp.o
-
-.PHONY : LoadLevelHelpers.o
-
-# target to build an object file
-LoadLevelHelpers.cpp.o:
-	$(MAKE) -f CMakeFiles/pacman.dir/build.make CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.o
-.PHONY : LoadLevelHelpers.cpp.o
-
-LoadLevelHelpers.i: LoadLevelHelpers.cpp.i
-
-.PHONY : LoadLevelHelpers.i
-
-# target to preprocess a source file
-LoadLevelHelpers.cpp.i:
-	$(MAKE) -f CMakeFiles/pacman.dir/build.make CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.i
-.PHONY : LoadLevelHelpers.cpp.i
-
-LoadLevelHelpers.s: LoadLevelHelpers.cpp.s
-
-.PHONY : LoadLevelHelpers.s
-
-# target to generate assembly for a file
-LoadLevelHelpers.cpp.s:
-	$(MAKE) -f CMakeFiles/pacman.dir/build.make CMakeFiles/pacman.dir/LoadLevelHelpers.cpp.s
-.PHONY : LoadLevelHelpers.cpp.s
-
 RedGhost.o: RedGhost.cpp.o
 
 .PHONY : RedGhost.o
@@ -338,6 +311,33 @@ helpers.s: helpers.cpp.s
 helpers.cpp.s:
 	$(MAKE) -f CMakeFiles/pacman.dir/build.make CMakeFiles/pacman.dir/helpers.cpp.s
 .PHONY : helpers.cpp.s
+
+loadLevelHelpers.o: loadLevelHelpers.cpp.o
+
+.PHONY : loadLevelHelpers.o
+
+# target to build an object file
+loadLevelHelpers.cpp.o:
+	$(MAKE) -f CMakeFiles/pacman.dir/build.make CMakeFiles/pacman.dir/loadLevelHelpers.cpp.o
+.PHONY : loadLevelHelpers.cpp.o
+
+loadLevelHelpers.i: loadLevelHelpers.cpp.i
+
+.PHONY : loadLevelHelpers.i
+
+# target to preprocess a source file
+loadLevelHelpers.cpp.i:
+	$(MAKE) -f CMakeFiles/pacman.dir/build.make CMakeFiles/pacman.dir/loadLevelHelpers.cpp.i
+.PHONY : loadLevelHelpers.cpp.i
+
+loadLevelHelpers.s: loadLevelHelpers.cpp.s
+
+.PHONY : loadLevelHelpers.s
+
+# target to generate assembly for a file
+loadLevelHelpers.cpp.s:
+	$(MAKE) -f CMakeFiles/pacman.dir/build.make CMakeFiles/pacman.dir/loadLevelHelpers.cpp.s
+.PHONY : loadLevelHelpers.cpp.s
 
 main.o: main.cpp.o
 
@@ -573,9 +573,6 @@ help:
 	@echo "... GhostScatterPeriod.o"
 	@echo "... GhostScatterPeriod.i"
 	@echo "... GhostScatterPeriod.s"
-	@echo "... LoadLevelHelpers.o"
-	@echo "... LoadLevelHelpers.i"
-	@echo "... LoadLevelHelpers.s"
 	@echo "... RedGhost.o"
 	@echo "... RedGhost.i"
 	@echo "... RedGhost.s"
@@ -588,6 +585,9 @@ help:
 	@echo "... helpers.o"
 	@echo "... helpers.i"
 	@echo "... helpers.s"
+	@echo "... loadLevelHelpers.o"
+	@echo "... loadLevelHelpers.i"
+	@echo "... loadLevelHelpers.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
