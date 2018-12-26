@@ -81,6 +81,10 @@ mazeIndex Character::getFloorMazeIndex() {
 	return mazeIndex (y/20, x/20);
 }
 
+mazeIndex Character::getCeilMazeIndex() {
+    return mazeIndex ((int) std::ceil( (double) y/20), (int) std::ceil( (double) x/20));
+}
+
 mazeIndex Character::getMazeIndex(int some_x, int some_y) {
     return mazeIndex ((((some_y+10)/20) * 20)/20, (((some_x+10)/20) * 20)/20);
 }

@@ -212,6 +212,7 @@ void World::updatePacman() {
     if (!pendingMoveMade) {
 
         nextPos = myPacman.getNextPosition();
+
         //whether or not we hit a wall or edge
         bool collidedW = this->collidedWithWall(nextPos);
 
@@ -342,31 +343,32 @@ SDL_Rect World::handleFrightened() {
 
     if (Red.isFrightened() || Red.isLosingFright()) {
 
-        std::vector<SDL_Rect> possible_next_positions;
+        std::vector<Direction> possible_next_directions;
 
-        std::array<mazeIndex, 4> possible_indices = {getNextMazeIndex(Red, Up),
-                                                     getNextMazeIndex(Red, Down),
-                                                     getNextMazeIndex(Red, Left),
-                                                     getNextMazeIndex(Red, Right)};
+        std::array<Direction, 4> test_directions = {Up, Down, Left, Right};
 
         Direction opposite_dir_to_current = getOppositeDirection(Red.getDrection());
 
-        for (int i = 0; i < possible_indices.size(); ++i) {
+        for (auto dir : test_directions) {
 
-            if (isWithinBounds(possible_indices[i])
-                && !maze[possible_indices[i].row][possible_indices[i].col].isOfTileType(Wall)
-                && !maze[possible_indices[i].row][possible_indices[i].col].isOfTileType(GhostHome)
-                && i != opposite_dir_to_current) {
+            mazeIndex curr = getNextMazeIndex(Red, dir);
 
-                possible_next_positions.push_back({possible_indices[i].col * 20, possible_indices[i].row * 20, 20, 20});
+            if (isWithinBounds(curr)
+                && !maze[curr.row][curr.col].isOfTileType(Wall)
+                && !maze[curr.row][curr.col].isOfTileType(GhostHome)
+                && dir != opposite_dir_to_current) {
+
+                possible_next_directions.push_back(dir);
             }
 
         }
 
-        if (possible_next_positions.empty())
+        if (possible_next_directions.empty())
             throw std::runtime_error("can't find random move for Red ghost!");
 
-        next = possible_next_positions[getRandomNumber(0, possible_next_positions.size() - 1)];
+        Direction randomDir = possible_next_directions[getRandomNumber(0, (int) possible_next_directions.size() - 1)];
+        Red.setDirection(randomDir);
+        next = Red.getNextPosition();
 
     } else next = ghost::getMode() == Scatter ? handleScatterMode() : handleChaseMode();
 
@@ -518,6 +520,7 @@ void World::handleEating (SDL_Rect rec) {
                 ghost_timer.pause();
                 frightened_timer.start();
                 points += 20;
+                cout << "here\n";
             } else points += 10;
 
             t = makeTile(t.x, t.y, Blank);

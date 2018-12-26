@@ -165,17 +165,20 @@ bool ghost::isLosingFright() {
 
 void ghost::bfs (std::vector<std::vector<Tile>> maze) {
 
-    mazeIndex start = getMazeIndex();
+    mazeIndex start = (dir == Up || dir == Left) ? getCeilMazeIndex() : getFloorMazeIndex();
+   // std::cout << start.row << " " << start.col << std::endl;
+
+//   std::cout << "floor: " << getFloorMazeIndex().row << " " << getFloorMazeIndex().col << std::endl;
+  //  std::cout << "ceil: " << getCeilMazeIndex().row << " " << getCeilMazeIndex().col << std::endl;
 
     std::vector<std::vector<mazeIndex>> parent (maze.size(), std::vector<mazeIndex> (maze[0].size()));
     parent[start.row][start.col] = {-2, -2};
 
     std::vector<std::vector<bool>> discovered (maze.size(), std::vector<bool> (maze[0].size(), false));
+    discovered[start.row][start.col] = true;
 
     std::queue<mazeIndex> q;
     q.push(start);
-
-    discovered[start.row][start.col] = true;
 
     bool Goalfound = start == TargetIndex;
 
@@ -226,12 +229,13 @@ void ghost::bfs (std::vector<std::vector<Tile>> maze) {
 
     ResetGhostPath(maze.size(), maze[0].size());
 
-    if (!q.empty() || Goalfound) {
+    if (q.empty() || Goalfound) {
         mazeIndex curr = parent[TargetIndex.row][TargetIndex.col];
         while (curr != start) {
             ghostPath[curr.row][curr.col] = true;
             curr = parent[curr.row][curr.col];
         }
+        ghostPath[start.row][start.col] = true;
     }
 }
 
@@ -256,7 +260,7 @@ int ghost::round(int x, int n) {
 }
 
 void ghost::UpdateDirection() {
-    mazeIndex mazeindex = getMazeIndex();
+    mazeIndex mazeindex = (dir == Left || dir == Up) ? getCeilMazeIndex() : getFloorMazeIndex();
 
     if (ghostPath[mazeindex.row][mazeindex.col - 1] == true)
         dir = Left;

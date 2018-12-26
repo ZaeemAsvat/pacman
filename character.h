@@ -30,6 +30,7 @@ public:
 
 	mazeIndex getMazeIndex ();
 	mazeIndex getFloorMazeIndex ();
+	mazeIndex getCeilMazeIndex();
 
 	void setSpeed (int new_spd);
 	int getSpeed();
