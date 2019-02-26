@@ -1,6 +1,7 @@
 //
 // Created by zaeem on 2018/01/27.
 //
+// some useless comment
 
 #ifndef PACMAN_BLUEGHOST_H
 #define PACMAN_BLUEGHOST_H
